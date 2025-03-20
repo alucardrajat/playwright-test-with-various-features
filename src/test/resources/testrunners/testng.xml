@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="OpenCart Test Suite" parallel="methods" thread-count="3" verbose="1">
+    
+    <listeners>
+        <listener class-name="com.qa.opencart.listeners.TestRetryListener"/>
+    </listeners>
+
+    <test name="Open Cart Regression Tests" parallel="classes" thread-count="2">
+        <classes>
+            <class name="com.qa.opencart.tests.HomePageTests"/>
+            <class name="com.qa.opencart.tests.LoginPageTests"/>
+            <class name="com.qa.opencart.tests.SearchTest"/>
+        </classes>
+    </test>
+
+</suite>

@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Banner Solutions Test Suite" verbose="1">
+    
+    <test name="Banner Solutions Anonymous User Tests">
+        <classes>
+            <class name="com.qa.opencart.tests.BannerSolutionsTest"/>
+        </classes>
+    </test>
+
+</suite> 

@@ -1,0 +1,36 @@
+{
+  "browsers": [
+    {
+      "name": "chrome",
+      "headless": false,
+      "slowMo": 0,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      }
+    },
+    {
+      "name": "firefox",
+      "headless": false,
+      "slowMo": 0,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      }
+    },
+    {
+      "name": "safari",
+      "headless": false,
+      "slowMo": 0,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      }
+    }
+  ],
+  "defaultBrowser": "chrome",
+  "defaultTimeout": 30000,
+  "retryCount": 2,
+  "parallel": true,
+  "threadCount": 3
+} 

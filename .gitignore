@@ -1,0 +1,71 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### IntelliJ IDEA ###
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+*.iws
+*.iml
+*.ipr
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+
+### Playwright Test Results ###
+test-results/
+# Keep test-results structure for CI/CD
+!test-results/.gitkeep
+
+### Playwright Video Files ###
+# Ignore all video files but keep the directory structure
+test-results/videos/
+!test-results/videos/.gitkeep
+
+### Playwright Trace Files ###
+test-results/trace.zip
+test-results/trace/
+
+### Test Reports ###
+reports/
+# Keep reports directory structure for CI/CD
+!reports/.gitkeep
+
+# But exclude specific report files and screenshots
+reports/TestExecutionReport.html
+reports/screenshots/
+reports/videos/
+reports/video-players/
+
+### TestNG Output ###
+test-output/
+direct-reports/
+
+### Project Specific ###
+# Local configuration files that shouldn't be committed
+**/local.properties

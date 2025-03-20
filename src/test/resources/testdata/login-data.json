@@ -1,0 +1,21 @@
+{
+  "validUsers": [
+    {
+      "email": "test@example.com",
+      "password": "test123",
+      "expectedTitle": "My Account"
+    },
+    {
+      "email": "user@example.com",
+      "password": "user123",
+      "expectedTitle": "My Account"
+    }
+  ],
+  "invalidUsers": [
+    {
+      "email": "invalid@example.com",
+      "password": "wrong123",
+      "expectedError": "Warning: No match for E-Mail Address and/or Password."
+    }
+  ]
+} 
