@@ -10,7 +10,7 @@ A robust test automation framework built with Playwright, TestNG, and Maven for 
 - **Parallel Test Execution**: Configurable parallel test execution using TestNG
 - **Video Recording**: Automatic video capture of test executions
 - **Screenshot Capture**: Automatic screenshots on test failure and success
-- **CI/CD Ready**: GitHub Actions workflow for automated testing
+- **CI/CD Ready**: Jenkins pipeline for automated testing
 
 ## Prerequisites
 
@@ -18,6 +18,7 @@ A robust test automation framework built with Playwright, TestNG, and Maven for 
 - Maven 3.8 or higher
 - Node.js 16 or higher (for Playwright)
 - Git
+- Jenkins (for CI/CD)
 
 ## Project Structure
 
@@ -42,6 +43,7 @@ PlaywrightFramework/
 │           └── testrunners/     # TestNG XML files
 ├── reports/                     # Test execution reports
 ├── test-results/               # Test artifacts (videos, traces)
+├── Jenkinsfile                 # Jenkins pipeline configuration
 └── pom.xml                     # Maven configuration
 ```
 
@@ -93,12 +95,50 @@ After test execution, you can find the reports in:
   - Videos: `test-results/videos/`
   - Traces: `test-results/trace/`
 
-## CI/CD Integration
+## Jenkins CI/CD Integration
 
-The framework includes a GitHub Actions workflow that:
-1. Runs tests on multiple browsers
-2. Generates and publishes test reports
-3. Uploads test artifacts (videos, screenshots)
+### Prerequisites for Jenkins
+
+1. Install required Jenkins plugins:
+   - Pipeline
+   - HTML Publisher
+   - Email Extension
+   - Git
+   - Maven Integration
+
+2. Configure Jenkins tools:
+   - JDK 17
+   - Maven 3.8.6
+
+### Jenkins Pipeline Configuration
+
+The project includes a `Jenkinsfile` that defines the CI/CD pipeline with the following stages:
+
+1. **Checkout**: Clones the repository
+2. **Install Dependencies**: Installs Maven dependencies and Playwright browsers
+3. **Run Tests**: Executes the test suite
+4. **Archive Results**: Archives test reports and artifacts
+5. **Cleanup**: Cleans the workspace
+
+### Pipeline Parameters
+
+- `BROWSER`: Browser to use for testing (default: chrome)
+- `HEADLESS`: Run tests in headless mode (default: true)
+- `TEST_SUITE`: Specific test suite to run (default: HomePageTests)
+
+### Setting up Jenkins Job
+
+1. Create a new Pipeline job in Jenkins
+2. Configure the job to use the `Jenkinsfile` from SCM
+3. Set the SCM to Git and provide your repository URL
+4. Configure the branch to build (e.g., main)
+
+### Email Notifications
+
+The pipeline automatically sends email notifications:
+- On every build completion
+- Includes build status and links to reports
+- Sent to all developers involved in the changes
 
 ## Configuration
 
@@ -136,6 +176,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - [Playwright](https://playwright.dev/)
 - [TestNG](https://testng.org/)
 - [Extent Reports](https://www.extentreports.com/)
-- [OpenCart](https://www.opencart.com/) 
+- [OpenCart](https://www.opencart.com/)
+- [Jenkins](https://www.jenkins.io/) 
 
 
