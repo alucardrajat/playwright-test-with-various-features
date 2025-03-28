@@ -71,7 +71,7 @@ pipeline {
     post {
         always {
             script {
-                def recipientEmails = 'rajatkumar@gmail.com'  // Replace with your email
+                def recipientEmails = 'rajatkumar8584@gmail.com'  // Replace with your email
                 emailext (
                     to: recipientEmails,
                     subject: "Build ${currentBuild.result}: Job ${env.JOB_NAME} [${env.BUILD_NUMBER}]",
