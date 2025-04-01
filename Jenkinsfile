@@ -132,4 +132,4 @@ def buildTestCommand(testSuite, testMethods, browser, headless, threadCount) {
     command += " -Dparallel=methods"
     
     return command
-} 
+}
